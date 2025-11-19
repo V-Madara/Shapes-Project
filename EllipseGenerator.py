@@ -62,28 +62,37 @@ for i in range(0,5):
 #! Finding Intersectons
 t.color("red")
 t.penup()
-t.goto(0,70)
-t.dot()
 t.goto(4,448/5)
 t.dot()
 t.goto(20,112)
+
 t.dot()
 t.goto(6300/119,4480/34)
 t.dot()
 t.goto(100,140)
 t.dot()
 
-#? Making Curve
-t.goto(0,70)
+#? Making Curve 
+
+# t.goto(0,70)
 t.dot()
-t.speed(7)
+
+turtle.speed(0)
 for i in range(-100,0):
     t.goto(100+i,70+(math.sqrt(math.pow(min/2,2)*(1-(math.pow(i,2)/math.pow(maj/2,2))))))
     t.dot()
+
 for i in range(0,100):
     t.goto(100+i,70+math.sqrt((70*70)*(1-((i*i)/(100*100)))))
     t.dot()
 
+for i in range(100,0,-1):
+    t.goto(100+i,70-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
+    t.dot()
+
+for i in range(0,100):
+    t.goto(100-i,70-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
+    t.dot()
 
 
 
