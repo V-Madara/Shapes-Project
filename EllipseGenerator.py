@@ -94,6 +94,7 @@ for i in range(0,100):
     t.goto(100-i,70-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
     t.dot()
 
+
 # # Vivek Logic
 
 # def draw_curve(points):
@@ -108,7 +109,7 @@ for i in range(0,100):
 #             tv = j/60; t2 = tv*tv; t3 = t2*tv
 #             x = (2*t3-3*t2+1)p1[0] + (-2*t3+3*t2)*p2[0] + (t3-2*t2+tv)(p2[0]-p0[0])0.5 + (t3-t2)(p3[0]-p1[0])*0.5
 #             y = (2*t3-3*t2+1)p1[1] + (-2*t3+3*t2)*p2[1] + (t3-2*t2+tv)(p2[1]-p0[1])0.5 + (t3-t2)(p3[1]-p1[1])*0.5
-#             t.goto(x,y)
+#             t.goto(x,y)  
 
 # draw_curve(left_points)
 

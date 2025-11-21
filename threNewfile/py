@@ -14,8 +14,25 @@ t.circle(maj/2)
 t.goto(0,maj/2)
 t.teleport(-maj/2,0)
 t.goto(maj/2,0)
+t.dot()
+# t.write("A",font=("Arial",12,"bold"))
+A = t.position()
+
+t.backward(maj)
+t.dot()
+# t.write("B",font=("Arial",12,"bold"))
+B = t.position()
+t.goto(0,0)
+t.left(90)
+t.forward(min/2)
+# t.write("C",font=("Arial",12,"bold"))
+C = t.position()
+
 
 t.teleport(0,0)
+t.dot()
+t.write("O",font=("Arial",8,"bold"))
+O = t.position()
 bch = 'A'
 big = []
 for i in range(1,6):
@@ -123,23 +140,20 @@ for i in range(0,10):
     t.teleport((big[i])[0],(small[i])[1])
     t.dot()
 
-turtle.speed(0.1)
-t.teleport(-maj/2,0)
+t.penup()
+t.goto(0,0)
+t.pendown()
 
-for i in range(-100,0):
-    t.goto(i,(math.sqrt(math.pow(min/2,2)*(1-(math.pow(i,2)/math.pow(maj/2,2))))))
-    t.dot()
+radius_x = t.distance(B)
+radius_y = t.distance(C)
 
-for i in range(0,100):
-    t.goto(i,math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
-
-for i in range(100,0,-1):
-    t.goto(i,-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
-
-for i in range(0,100):
-    t.goto(-i,-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
+steps = 120
+for i in range(steps + 1):
+    
+    angle = i * 360 / steps
+    t.setheading(angle)
+    dx = radius_x * math.cos(math.radians(angle))
+    dy = radius_y * math.sin(math.radians(angle))
+    t.goto(O[0] + dx, O[1] + dy)
 
 turtle.done()
