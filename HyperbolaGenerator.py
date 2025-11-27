@@ -37,12 +37,32 @@ t.dot()
 
 const = x*y;
 t.teleport(1,x*y)
+# t.color("red")
+
+t.color("darkOrchid4")
+for i in range(1,x*y+1):
+    if(const%i==0):
+        gotoy = int(const/i)
+        t.teleport(i,gotoy)
+        t.dot()
+        t.write(f"( {i} , {gotoy} )",font=("Arial",8,"normal"))
+
+t.teleport(-1,-const)
+for i in range(-1,-x*y-1,-1):
+    if(const%i==0):
+        gotoy = int(const/i)
+        t.teleport(i,gotoy)
+        t.dot()
+        t.write(f"( {i} , {gotoy} )",font=("Arial",8,"normal"))
+
+t.pensize(3)
 t.color("red")
-t.pensize(2)
+t.teleport(1,const)
 for i in range(1,x*y):
     gotoy = const/i
     t.goto(i,gotoy)
 t.teleport(-1,-const)
+
 for i in range(-1,-x*y,-1):
     gotoy = const/i
     t.goto(i,gotoy)
