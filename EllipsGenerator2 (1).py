@@ -5,7 +5,7 @@ import math
 maj,min = 200,140
 
 t = turtle.Turtle()
-t.speed(0.5)
+t.speed(1)
 
 t.teleport(0,-min/2)
 t.circle(min/2)
@@ -123,23 +123,27 @@ for i in range(0,10):
     t.teleport((big[i])[0],(small[i])[1])
     t.dot()
 
-turtle.speed(0.1)
+turtle.speed(1)
 t.teleport(-maj/2,0)
-
+t.pensize(2)
+t.pendown()
 for i in range(-100,0):
     t.goto(i,(math.sqrt(math.pow(min/2,2)*(1-(math.pow(i,2)/math.pow(maj/2,2))))))
-    t.dot()
+    # t.dot()
 
 for i in range(0,100):
     t.goto(i,math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
+    # t.dot()
 
 for i in range(100,0,-1):
     t.goto(i,-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
+    # t.dot()
 
 for i in range(0,100):
     t.goto(-i,-math.sqrt((70*70)*(1-((i*i)/(100*100)))))
-    t.dot()
+    # t.dot()
+t.goto(-maj/2,0)
+
+turtle.hideturtle()
 
 turtle.done()
