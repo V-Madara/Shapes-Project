@@ -2,13 +2,13 @@ import turtle
 import math
 
 t = turtle.Turtle();
-
+t.speed(0.1)
 # x = int(input("Enter the x coordinate: "))
 # y = int(input("Enter the y coordinate: "))
 
 # if(x%10==x and y%10==y):
-#     x*=50
-#     y*=50
+#     x*=10
+#     y*=10
 # elif(x%100==x and y%100==y):
 #     x*=5
 #     y*=5
@@ -27,6 +27,13 @@ t.teleport(0,0)
 t.goto(0,(x+1)*(y+1))
 t.teleport(x,y)
 t.dot()
+t.teleport(0,0)
+
+t.goto(-(x+1)*(y+1),0)
+t.teleport(0,0)
+t.goto(0,-(x+1)*(y+1))
+t.teleport(-x,-y)
+t.dot()
 
 const = x*y;
 t.teleport(1,x*y)
@@ -35,9 +42,13 @@ t.pensize(2)
 for i in range(1,x*y):
     gotoy = const/i
     t.goto(i,gotoy)
+t.teleport(-1,-const)
+for i in range(-1,-x*y,-1):
+    gotoy = const/i
+    t.goto(i,gotoy)
 
 
 
-
+t.hideturtle()
 
 turtle.done();
