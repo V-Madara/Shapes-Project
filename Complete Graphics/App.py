@@ -18,17 +18,17 @@ def button(l,b,txt,bg):
     t.teleport(pos[0]+10,pos[1]+10)
     t.write(txt,font=("Arial",18,"bold"))
 
+
 button(200,60,"Welcome to Graphics \n            click me","red")
-pos = []
-def clickPos(self,x,y):
-    pos.append(x)
-    pos.append(y)
-    print(pos[0],pos[1])
+
+def clickPos(x,y):
+    pos = [x,y]
+    return pos
+
+
 scr.onclick(clickPos)
 scr.listen()
 
-# if(-100<=pos[0]<=100 and -30<=pos[1]<=30):
-    # scr.clearscreen
 
 
 
