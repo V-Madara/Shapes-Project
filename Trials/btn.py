@@ -1,4 +1,5 @@
 import turtle
+import random
 
 t = turtle.Turtle()
 scr = turtle.Screen()
@@ -18,8 +19,14 @@ def show_pos(x,y):
 scr.onclick(show_pos)
 scr.listen()
 
+rdm = [1,-1,0]
 
+def click(x,y):
+    t.forward(70)
+    t.left(random.choice(rdm)*90)
+    t.forward(40)
 
+t.onclick(click)
 
 
 turtle.hideturtle()
